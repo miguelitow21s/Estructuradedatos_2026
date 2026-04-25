@@ -14,3 +14,12 @@ class Navegador:
         # Al visitar una nueva pagina se borra el historial adelante
         self.pila_adelante.clear()
         print(f"Visitando: {self.pagina_actual.url}")
+
+    def atras(self):
+        if self.pila_atras:
+            # POP de pila_atras, PUSH a pila_adelante
+            self.pila_adelante.append(self.pagina_actual)
+            self.pagina_actual = self.pila_atras.pop()
+            print(f"Atras -> {self.pagina_actual.url}")
+        else:
+            print("No hay paginas anteriores")
