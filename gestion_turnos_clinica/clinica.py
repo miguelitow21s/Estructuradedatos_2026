@@ -7,3 +7,8 @@ class Clinica:
 
     def agregar_doctor(self, doctor):
         self.colas[doctor] = deque()
+
+    def agregar_paciente(self, doctor, paciente):
+        # ENQUEUE: se agrega al final de la cola
+        self.colas[doctor].append(paciente)
+        print(f"{paciente.nombre} entra a la cola del Dr. {doctor.nombre}")
