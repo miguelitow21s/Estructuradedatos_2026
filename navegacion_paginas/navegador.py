@@ -23,3 +23,12 @@ class Navegador:
             print(f"Atras -> {self.pagina_actual.url}")
         else:
             print("No hay paginas anteriores")
+
+    def adelante(self):
+        if self.pila_adelante:
+            # POP de pila_adelante, PUSH a pila_atras
+            self.pila_atras.append(self.pagina_actual)
+            self.pagina_actual = self.pila_adelante.pop()
+            print(f"Adelante -> {self.pagina_actual.url}")
+        else:
+            print("No hay paginas siguientes")
